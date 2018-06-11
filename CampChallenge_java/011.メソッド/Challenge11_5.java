@@ -28,11 +28,13 @@ public class Challenge11_5 extends HttpServlet {
      * @throws ServletException if a servlet-specific error occurs
      * @throws IOException if an I/O error occurs
      */
-    String[] data={"ID:1657","1971年1月21日","杜王町"};
-    void output(PrintWriter pw){
-     for(int i=1;i<data.length;i++){
-       pw.println( data[i]+"<br>");
-    }   
+    
+    String[] output(){
+        String[] data={"ID:1657","1971年1月21日","杜王町"};
+     
+        
+        return data;
+     
     } 
     protected void processRequest(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
@@ -45,7 +47,10 @@ public class Challenge11_5 extends HttpServlet {
             out.println("<title>Servlet Challenge11_5</title>");            
             out.println("</head>");
             out.println("<body>");
-            output(out);
+            String[] a=output();
+            for(int i=1;i<a.length;i++){
+                out.print(a[i]);
+            }
             out.println("</body>");
             out.println("</html>");
         }
